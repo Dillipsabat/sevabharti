@@ -1,0 +1,10 @@
+<div class="div1">
+    <div class="div2">
+    <input type="text" placeholder="Enter BloodBank Username" [(ngModel)]="rec.bloodbank_username"><br>
+    <input type="text" placeholder="Enter BloodBank Password" [(ngModel)]="rec.bloodbank_password"><br>
+    <button (click)="login(rec)">Login</button>
+    <h3>If not registered ?<button><a routerLink="bloodbanksignup">Sign Up</a></button></h3>
+ </div> 
+</div>
+ <router-outlet></router-outlet> 
+

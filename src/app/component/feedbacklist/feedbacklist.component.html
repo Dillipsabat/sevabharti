@@ -1,0 +1,24 @@
+<table id="dtBasicExample" class="table float-left table-danger table-hover table-striped table-bordered table-sm"
+    cellspacing="0"
+    style=" margin-top: -600px; width: 70%; height: 40%; margin-left: 320px;">
+    <thead>
+        <tr>
+            <th class="th-sm">FeedbackName
+
+            </th>
+            <th class="th-sm">FeedbackEmail
+
+            </th>
+            <th class="th-sm">Message
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of frods">
+            <td>{{f.feedback_name}}</td>
+            <td>{{f.feedback_emaill}}</td>
+            <td>{{f.feedback_message}}</td>
+       </tr>
+    </tbody>
+</table>

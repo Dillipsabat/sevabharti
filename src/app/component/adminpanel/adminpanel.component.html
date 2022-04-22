@@ -1,0 +1,43 @@
+
+<header style="background: black; margin-top: -50px;">
+    
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar mt-5 collapse bg-dark" style="height: 617px;">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush bg-dark mx-3 mt-4">
+                <a  class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"
+                    aria-current="true">
+                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                </a>
+                <a class="list-group-item list-group-item-action bg-dark py-2 ripple active">
+                    <i class="fas fa-chart-area text-white fa-fw me-3"></i><span class="text-white">Webiste traffic</span>
+                </a>
+                <a routerLink="userlist" href="#" class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"><i
+                    class="fas fa-globe fa-fw me-3"></i><span>UserList</span></a>
+                <a routerLink="donorlist"
+                    class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"><i
+                        class="fas fa-lock fa-fw me-3"></i><span>Donor List</span></a>
+                <a  routerLink="benfrequestlist" href="#" class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"><i
+                        class="fas fa-chart-line fa-fw me-3"></i><span>Blood Requests</span></a>
+                <a routerLink="bloodbanklist" href="#" class="list-group-item text-white list-group-item-action bg-dark py-2 ripple">
+                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>Blood Banks Information</span>
+                </a>
+                <a routerLink="feedbacklist" href="#" class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"><i
+                        class="fas fa-chart-bar fa-fw me-3"></i><span>Beneficiary Feedbacks</span></a>
+                <a routerLink="enquirylist" href="#" class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"><i
+                        class="fas fa-globe fa-fw me-3"></i><span>Enquiry Forms</span></a>
+                <a  class="list-group-item text-white list-group-item-action bg-dark py-2 ripple"><i
+                        class="fas fa-globe fa-fw me-3"></i><button class="btn btn-bark text-white" (click)="change1()"><span>Logout</span></button></a>
+            </div>
+        </div>
+    </nav>
+   
+
+</header>
+
+
+
+<main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+</main>
+
+<router-outlet></router-outlet>

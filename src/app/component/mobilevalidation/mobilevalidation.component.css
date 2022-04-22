@@ -1,0 +1,29 @@
+.class1
+{
+    border: 2px solid;
+    background-color: rgb(211, 181, 143);
+    color: black;
+    box-shadow: 0px 5px 20px 0px #6F1667;
+    width: 500px;
+    height: 300px;
+    margin-left: 400px;
+    margin-top: 100px;
+    font-size: 20px;
+    padding: 20px;
+}
+.class1 > input{
+    width: 400px;
+    padding: 20px;
+    margin: 20px;
+    height: 30px;
+    margin-left: 30px;
+}
+.class1 > button{
+    width:auto;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: 180px;
+}
+.card{
+    box-shadow: 5px 5px 10px 5px #9cc6ed;
+}

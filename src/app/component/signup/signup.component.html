@@ -1,0 +1,210 @@
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Welcome</h3>
+      <!-- <p>You are 30 seconds away from earning your own money!</p> -->
+      <input type="submit" name="" value="Login" /><br />
+    </div>
+    <div class="col-md-9 register-right">
+      <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active w-100" style="margin: 0 auto; margin-top: 10px;" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Apply as a Donor</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          
+          <div class="row register-form">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" #model="ngModel" class="form-control" [(ngModel)]="newrec.user_fullname" placeholder="Enter YourName Name *" value=""  required/>
+                <div *ngIf="model.invalid" style="color: red">Required</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="newrec.user_age" placeholder="Enter YourName Age *" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" (keypress)="keyPress($event)" 
+                minlength=10 maxlength=10 class="form-control" 
+                [(ngModel)]="newrec.user_mobile1" placeholder="Enter YourName Mobile no. *" value="" />
+                
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text"  class="form-control" [(ngModel)]="newrec.user_mobile2" placeholder="Enter YourNameAlternative Mobile no. *" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="email" class="form-control" [(ngModel)]="newrec.user_emailid" placeholder="Your Email *" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" name="gender" ngModel required #gender="ngModel" [(ngModel)]="newrec.user_gender">
+                  <option class="visually-hidden"  disabled [ngValue]="null">Please select your Gender</option>
+                  <option *ngFor="let key of  grods" [value]="key.gender_id">
+                    {{key.gender_name}}</option> 
+                </select>
+                <div *ngIf="gender.invalid" style="color: red"> 
+                  Gender required. 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" name="bloodgroup" ngModel required #bloodgroup="ngModel" [(ngModel)]="newrec.user_bloodgroup">
+                  <option class="hidden" [ngValue]="null" disabled>Please select your BloodGroup</option>
+                  <option *ngFor="let key of  brods" [value]="key.bloodgroup_id">
+                    {{key.bloodgroup_name}}</option>
+                </select>
+                <div *ngIf="bloodgroup.invalid" style="color: red"> 
+                  BloodGroup required. 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control"  name="country" ngModel required #country="ngModel" (change)="getstate($event.target.value)" [(ngModel)]="newrec.user_country">
+                  <option class="hidden" [ngValue]="null"  disabled>Please select your Country</option>
+                  <option *ngFor="let key of prods" [value]="key.country_id">
+                    {{key.country_name}}</option>
+                </select>
+                <div *ngIf="country.invalid" style="color: red"> 
+                  Country required. 
+                </div> 
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" name="state" ngModel required #state="ngModel" (change)="getdistrict($event.target.value)"  [(ngModel)]="newrec.user_state">
+                  <option class="hidden" [ngValue]="null" disabled>Please select your state</option>
+                  <option *ngFor="let key of srods" [value]="key.state_id">
+                    {{key.state_name}}</option>
+                </select>
+                <div *ngIf="state.invalid" style="color: red"> 
+                  State required. 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" name="dist" ngModel required #dist="ngModel" (change)="getarea($event.target.value)"  [(ngModel)]="newrec.user_district">
+                  <option class="hidden" [ngValue]="null" disabled>Please select your dist</option>
+                  <option *ngFor="let key of drods" [value]="key.district_id">
+                    {{key.district_name}}</option>
+                </select>
+                <div *ngIf="dist.invalid" style="color: red"> 
+                  District required. 
+                </div>
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="area" ngModel required #area="ngModel" [(ngModel)]="newrec.user_area">
+                  <option class="hidden" [ngValue]="null" disabled>Please select your area</option>
+                  <option *ngFor="let key of arods" [value]="key.area_id">
+                    {{key.area_name}}</option>
+                </select>
+                <div *ngIf="area.invalid" style="color: red"> 
+                  Area required. 
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="newrec.user_pincode" placeholder="Enter Your Pincode *" value="" />
+              </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" [(ngModel)]="newrec.user_fulladdress" placeholder="Your Full Address *" value="" />
+                </div>
+                <div class="form-group">
+                  <select class="form-control" [(ngModel)]="newrec.userstatus">
+                    <option class="hidden" name="selectedTechs" ngModel required #selectedTechs="ngModel" [ngValue]="null" disabled>Please select your are donor or not</option>
+                    <option *ngFor="let key of urods" [value]="key.id_user">
+                      {{key.user_status}}</option>
+                  </select>
+                  <div *ngIf="selectedTechs.invalid" style="color: red"> 
+                     Select You Want to be a Donor or Not. 
+                  </div>
+                </div>
+              <input type="submit" (click)="add(newrec)" class="btnRegister" value="Register" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- <div class="signup">
+  <form #usermodel="ngForm" [ngFormOptions]="{updateOn:'change'}">
+  <input type="text" placeholder="Enter your FullName" [(ngModel)]="newrec.user_fullname" name="fullname" required minlength="6" maxlength="12">
+  <span *ngIf="usermodel.controls['fullname'].hasError('required')">Enter Your Full Name</span>
+  <span *ngIf="usermodel.controls['fullname'].hasError('minlength')">Too Short</span>
+  <span *ngIf="usermodel.controls['fullname'].hasError('maxlength')">Too Long</span><br>
+  <input type="number" placeholder="Enter Your age" [(ngModel)]="newrec.user_age" name="age" required>
+  <span *ngIf="usermodel.controls['age'].invalid">Enter Your Age</span><br>
+  Select Your Gender:
+  <select [(ngModel)]="newrec.user_gender" name="gender" required>
+      <option *ngFor="let key of  grods" [value]="key.gender_id">
+      {{key.gender_name}}</option>
+  </select>
+  <span *ngIf="usermodel.controls['gender'].invalid">Select Your Gender</span><br>
+  Select your Blood Group:
+      <select [(ngModel)]="newrec.user_bloodgroup" name="bloodgroup" required>
+          <option *ngFor="let key of  brods" [value]="key.bloodgroup_id">
+          {{key.bloodgroup_name}}</option>
+      </select>
+      <span *ngIf="usermodel.controls['bloodgroup'].invalid">Select Your Blood Group</span><br>
+      <input type="number" placeholder="Enter Your Mobile Number" [(ngModel)]="newrec.user_mobile1" name="mobile1" required pattern="[0-9]{10}">
+      <span *ngIf="usermodel.controls['mobile1'].hasError('required')">Enter Your mobile1</span>
+      <span *ngIf="usermodel.controls['bloodgroup'].hasError('mobile1')">Enter 10 Digit Number</span>   <br>
+      <input type="number" placeholder="Enter Your Alternative Mobile Number" [(ngModel)]="newrec.user_mobile2" name="mobile2" required pattern="[0-9]{10}">
+      <span *ngIf="usermodel.controls['mobile2'].hasError('required')">Enter Your Alternative Mobile Number</span>
+      <span *ngIf="usermodel.controls['mobile2'].hasError('pattern')">Enter 10 Digit Number </span><br>
+      <input type="mail" placeholder="Enter Your Email Id" [(ngModel)]="newrec.user_emailid" name="emailid">
+      <span *ngIf="usermodel.controls['emailid'].invalid">Enter Your Email Id</span><br>
+      <input type="text" placeholder="Enter Your Full Address" [(ngModel)]="newrec.user_fulladdress" name="fulladdress">
+      <span *ngIf="usermodel.controls['fulladdress'].invalid">Enter Your Full Address</span><br>
+      Country:
+      <select (change)="getstate($event.target.value)" [(ngModel)]="newrec.user_country" name="country" required>
+          <option *ngFor="let key of prods" [value]="key.country_id">
+              {{key.country_name}}</option>
+      </select>
+      <span *ngIf="usermodel.controls['country'].invalid">Select Your Country</span><br>
+      state:
+      <select (change)="getdistrict($event.target.value)" [(ngModel)]="newrec.user_state" name="state" required>
+          <option *ngFor="let key of srods" [value]="key.state_id">
+              {{key.state_name}}</option>
+      </select>
+      <span *ngIf="usermodel.controls['state'].invalid">Select Your State</span><br>
+      dist:
+      <select (change)="getarea($event.target.value)" [(ngModel)]="newrec.user_district" name="district" required>
+          <option *ngFor="let key of drods" [value]="key.district_id">
+              {{key.district_name}}</option>
+      </select>
+      <span *ngIf="usermodel.controls['district'].invalid">Select Your District</span><br>
+      area:
+      <select [(ngModel)]="newrec.user_area" name="area" required>
+          <option *ngFor="let key of arods" [value]="key.area_id">
+              {{key.area_name}}</option>
+      </select>
+      <span *ngIf="usermodel.controls['area'].invalid">Select Your Area</span><br>
+   <input type="number" placeholder="Enter Pincode" [(ngModel)]="newrec.user_pincode" name="pincode" required>
+   <span *ngIf="usermodel.controls['pincode'].invalid">Enter Your Pincode</span><br>
+   You want to be a Donor or Not:
+   <select [(ngModel)]="newrec.userstatus" name="status" required>
+      <option *ngFor="let key of urods" [value]="key.id_user">
+          {{key.user_status}}</option>
+  </select>
+  <span *ngIf="usermodel.controls['status'].invalid">Select You Want to be a Donor or Not</span><br>
+  <button (click)="add(newrec)">Signup</button>
+</form>
+</div> -->

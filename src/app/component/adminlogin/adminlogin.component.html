@@ -1,0 +1,54 @@
+<div class="container h-100" style="margin-top: 100px;">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <img src="../../../assets/3811608.png" class="brand_logo" alt="Logo">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form>
+                    <div class="input-group mb-3" style="margin-left: 45px;">
+                        <div class="input-group-append" >
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <div><input  type="text" name="username" class="form-control input_user" value=""
+                            placeholder="username" [(ngModel)]="rec.admin_username" #model1="ngModel" required></div>
+                        <div *ngIf="model1.hasError('required')" style="color: red" >Enter Username</div>
+                    </div>
+                    <div class="input-group mb-2" style="margin-left: 45px;">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <div><input type="password" name="password" class="form-control input_pass" value=""
+                            placeholder="password" [(ngModel)]="rec.admin_password" #model2="ngModel" required
+                            pattern="[A-Za-z.\s0-9]{10}" minlength="8" maxlength="20"></div>
+                        <div *ngIf="model2.hasError('required')" style="color: red">Enter Password </div>
+                        <!-- <div *ngIf="model2.hasError('minlength')" style="color: red">Password Too Short</div>
+                        <div *ngIf="model2.hasError('maxlength')" style="color: red">Password Too Long</div> -->
+                        <!-- <div *ngIf="model2.hasError('pattern')" style="color: red">Enter Correct Password </div> -->
+                    </div>
+                    <!-- <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customControlInline">
+                            <label class="custom-control-label" for="customControlInline">Remember me</label>
+                        </div>
+                    </div> -->
+                    <div class="d-flex justify-content-center mt-3 login_container" style="margin-left: 10px;">
+                        <button type="button" name="button" class="btn login_btn" (click)="login(rec)">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+<!-- <form #usermodel="ngForm" [ngFormOptions]="{updateon:'change'}">
+    <input type="text" name="username" placeholder="Enter Admin Username" [(ngModel)]="rec.admin_username" required>
+    <span *ngIf="usermodel.controls['username'].invalid">Enter Your User Name</span><br>
+    <input type="password" placeholder="Enter Admin Password" [(ngModel)]="rec.admin_password" name="password" required>
+    <span *ngIf="usermodel.controls['password'].invalid">Enter Password</span><br>
+    <input type="button" value="Login" (click)="login(rec)">
+</form>
+<router-outlet></router-outlet> -->

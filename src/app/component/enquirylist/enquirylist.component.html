@@ -1,0 +1,24 @@
+<table id="dtBasicExample" class="table float-left table-danger table-hover table-striped table-bordered table-sm"
+    cellspacing="0"
+    style=" margin-top: -600px; width: 70%; height: 40%; margin-left: 320px;">
+    <thead>
+        <tr>
+            <th class="th-sm">Name
+
+            </th>
+            <th class="th-sm">MobileNumber
+
+            </th>
+            <th class="th-sm">Message
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of erods;">
+            <td>{{e.enquiry_name}}</td>
+            <td>{{e.enquiry_mobileno}}</td>
+            <td>{{e.enquiry_message}}</td>
+         </tr>
+    </tbody>
+</table>

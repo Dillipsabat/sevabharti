@@ -1,0 +1,21 @@
+<table id="dtBasicExample" class="table float-left table-danger table-hover table-striped table-bordered table-sm" cellspacing="0"  style=" margin-top: -450px; width: 70%; height: 40%; margin-left: 320px;">
+    <thead>
+      <tr>
+        <th class="th-sm">BloodBankName
+  
+        </th>
+        <th class="th-sm">Location
+  
+        </th>
+        <th class="th-sm">ContactNumber
+  
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of brods;">
+            <td>{{b.bloodbank_name}}</td>
+            <td>{{b.bloodbank_location}}</td>
+            <td>{{b.bloodbank_contactno}}</td>
+        </tr>
+    </tbody>
+</table>

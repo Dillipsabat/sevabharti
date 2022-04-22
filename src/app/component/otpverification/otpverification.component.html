@@ -1,0 +1,14 @@
+<div id="app">
+    <div class="container height-100 d-flex justify-content-center align-items-center">
+        <div class="position-relative">
+            <div class="card p-2 text-center">
+                <h6>Please enter the one time password <br> </h6>
+                <!-- <div id="otp" [(ngModel)]="otp" name="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="input1" v-on:keyup="inputenter(1)" maxlength="1" /> <input  class="m-2 text-center form-control rounded" v-on:keyup="inputenter(2)" type="text" id="input2" maxlength="1" /> <input  class="m-2 text-center form-control rounded" v-on:keyup="inputenter(3)" type="text" id="input3" maxlength="1" /> <input  class="m-2 text-center form-control rounded" v-on:keyup="inputenter(4)" type="text" id="input4" maxlength="1" /> </div> -->
+                 <div id="otp" name="number" class="inputs d-flex flex-row justify-content-center mt-2"><input [(ngModel)]="otp" (keypress)="keyPress($event)" 
+            minlength=2 maxlength=6 class="m-2 text-center form-control rounded" v-on:keyup="inputenter(4)" type="text" id="input4" maxlength="6" /> </div>
+                <div class="mt-4"> <button class="btn btn-danger px-4 validate" (click)="verify1(otp)">Validate</button> </div>
+                <div class="mt-3 content d-flex justify-content-center align-items-center"> <span>Didn't get the code</span> <a class="text-decoration-none ms-3" (click)="resend()">Resend</a> </div>
+            </div>
+        </div>
+    </div>
+</div>

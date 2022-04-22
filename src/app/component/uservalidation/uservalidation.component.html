@@ -1,0 +1,27 @@
+<!-- <div id="app">
+    <div class="container height-100 d-flex justify-content-center align-items-center">
+        <div class="position-relative">
+            <div class="card p-2 text-center">
+                <h6>Please enter the one time password <br> </h6>
+                <div> <span> sent to</span> <small>+1******4343</small> </div>
+                <div id="otp" [(ngModel)]="mobile_no" class="inputs d-flex flex-row justify-content-center mt-2"> <input [(ngModel)]="mobile_no" class="m-2 text-center form-control rounded" type="text" id="input1" v-on:keyup="inputenter(1)" maxlength="1" /> <input [(ngModel)]="mobile_no" class="m-2 text-center form-control rounded" v-on:keyup="inputenter(2)" type="text" id="input2" maxlength="1" /> <input [(ngModel)]="mobile_no" class="m-2 text-center form-control rounded" v-on:keyup="inputenter(3)" type="text" id="input3" maxlength="1" /> <input [(ngModel)]="mobile_no"class="m-2 text-center form-control rounded" v-on:keyup="inputenter(4)" type="text" id="input4" maxlength="1" /> </div>
+                <div class="mt-4"> <button class="btn btn-danger px-4 validate" (click)="generate(mobile_no)">Generate OTP</button> </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card py-4 px-4">
+        <div class="text-center"> <img src="../../../assets/mobile-icon.png" width="60"> </div>
+        <div class="text-center mb-3"> <span class="info-text">Please enter your mobile number</span> </div>
+        <div class="position-relative mb-5 form-input"> <input (keypress)="keyPress($event)" 
+            minlength=10 maxlength=10 class="form-control" #model4="ngModel" name="mobile_no" [(ngModel)]="mobile_no" required pattern="[0-9]{10}" minlength="10" maxlength="10"> 
+            <div *ngIf="model4.hasError('minlength')" style="color: red">Enter 10 Digit Mobile Number</div>
+            <div *ngIf="model4.hasError('required')" style="color: red">Enter Mobile Number</div>
+        </div>
+        <button class="btn btn-danger p-2" (click)="generate(mobile_no)">submit</button>
+    </div>
+</div>
+

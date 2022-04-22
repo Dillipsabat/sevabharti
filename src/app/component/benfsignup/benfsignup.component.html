@@ -1,0 +1,181 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Welcome</h3>
+            <p>You are 30 seconds away from earning your own money!</p>
+            <input type="submit" name="" value="Signup" /><br />
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active w-100" style="margin: 0 auto; margin-top: 10px;" id="home-tab"  data-toggle="tab" role="tab"
+                        aria-controls="home" aria-selected="true">I Need Blood</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" #model="ngModel" class="form-control" [(ngModel)]="rec.benf_fullname"
+                                    placeholder="Enter Your Name *" value="" required />
+                                    <div *ngIf="model.invalid" style="color: red">Name Required</div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text"  #model3="ngModel" class="form-control" [(ngModel)]="rec.benf_age"
+                                    placeholder="Enter Your Age *" value="" required/>
+                                    <div *ngIf="model3.invalid" style="color: red">Name Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" (keypress)="keyPress($event)" 
+                                minlength=10 maxlength=10 class="form-control" [(ngModel)]="rec.benf_mobile1"
+                                    placeholder="Enter Your  Mobile no. *" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="rec.benf_mobile2"
+                                    placeholder="Enter Your Alternative Mobile no. *" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Enter No Of Units Required"
+                                    [(ngModel)]="rec.benf_units_required" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" name="gender" ngModel required #gender="ngModel" [(ngModel)]="rec.benf_gender">
+                                    <option class="visually-hidden" disabled [ngValue]="null">Please select your Gender
+                                    </option>
+                                    <option *ngFor="let key of  grods" [value]="key.gender_id">
+                                        {{key.gender_name}}</option>
+                                </select>
+                                <div *ngIf="gender.invalid" style="color: red"> 
+                                    Gender required. 
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" name="bloodgroup" ngModel required #bloodgroup="ngModel" [(ngModel)]="rec.benf_bloodgroup">
+                                    <option class="hidden" [ngValue]="null" disabled>Please select your BloodGroup
+                                    </option>
+                                    <option *ngFor="let key of  brods" [value]="key.bloodgroup_id">
+                                        {{key.bloodgroup_name}}</option>
+                                </select>
+                                <div *ngIf="bloodgroup.invalid" style="color: red"> 
+                                    BloodGroup required. 
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" name="bloodrqsttyp" ngModel required #bloodrqsttyp="ngModel" [(ngModel)]="rec.benf_blood_type">
+                                    <option class="hidden" [ngValue]="null" disabled>Please select your Blood Request
+                                        Type</option>
+                                    <option *ngFor="let key of  trods" [value]="key.blood_type_id">
+                                        {{key.blood_type_name}}</option>
+                                </select>
+                                <div *ngIf="bloodrqsttyp.invalid" style="color: red"> 
+                                    Blood Request Type required. 
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" name="accptdbloodgroup" ngModel required #accptdbloodgroup="ngModel" [(ngModel)]="rec.benf_acc_bloodgroup">
+                                    <option class="hidden" [ngValue]="null" disabled>Please Select your Accepted
+                                        BloodGroupTypes</option>
+                                    <option *ngFor="let key of  abrods" [value]="key.bloodgroup_id">
+                                        {{key.benf_accepted_bloodgroup}}</option>
+                                </select>
+                                <div *ngIf="accptdbloodgroup.invalid" style="color: red"> 
+                                    Alternative BloodGroup required. 
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="rec.benf_deadline"
+                                    placeholder="Enter Your DeadLine *" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" name="country" ngModel required #country="ngModel" (change)="getstate($event.target.value)" [(ngModel)]="rec.benf_country">
+                                    <option class="hidden" [ngValue]="null" disabled>Please select your Country</option>
+                                    <option *ngFor="let key of prods" [value]="key.country_id">
+                                        {{key.country_name}}</option>
+                                </select>
+                                <div *ngIf="country.invalid" style="color: red"> 
+                                    Country required. 
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" name="state" ngModel required #state="ngModel" (change)="getdistrict($event.target.value)" [(ngModel)]="rec.benf_state">
+                                    <option class="hidden" [ngValue]="null" disabled>Please select your state</option>
+                                    <option *ngFor="let key of srods" [value]="key.state_id">
+                                        {{key.state_name}}</option>
+                                </select>
+                                <div *ngIf="state.invalid" style="color: red"> 
+                                    State required. 
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control"  name="dist" ngModel required #dist="ngModel" (change)="getarea($event.target.value)" [(ngModel)]="rec.benf_district">
+                                    <option class="hidden" [ngValue]="null" disabled>Please select your dist</option>
+                                    <option *ngFor="let key of drods" [value]="key.district_id">
+                                        {{key.district_name}}</option>
+                                </select>
+                                <div *ngIf="dist.invalid" style="color: red"> 
+                                    District required. 
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="area" ngModel required #area="ngModel" [(ngModel)]="rec.benf_area">
+                                    <option class="hidden" [ngValue]="null" disabled>Please select your area</option>
+                                    <option *ngFor="let key of arods" [value]="key.area_id">
+                                        {{key.area_name}}</option>
+                                </select>
+                                <div *ngIf="area.invalid" style="color: red"> 
+                                    Area required. 
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="rec.benf_pincode"
+                                    placeholder="Enter Your Pincode *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" #model1="ngModel" class="form-control" placeholder="Enter Hospital  Name *"
+                                    [(ngModel)]="rec.benf_hospital_name" value="" required />
+                                    <div *ngIf="model1.invalid" style="color: red">Hospital Name Required</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" #model2="ngModel" class="form-control" placeholder="Enter Hospital Address *"
+                                    [(ngModel)]="rec.benf_hospital_address" value="" required/>
+                                    <div *ngIf="model2.invalid" style="color: red">Hospital Address Required</div>
+                            </div>
+                            <input type="submit" (click)="save(rec)" class="btnRegister" value="Register" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

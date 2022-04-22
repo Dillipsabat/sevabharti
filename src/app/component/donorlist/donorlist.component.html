@@ -1,0 +1,64 @@
+<table id="dtBasicExample" class="table float-left table-danger table-hover table-striped table-bordered table-sm" cellspacing="0"  style="display: inline-block; overflow:scroll; margin-top: -630px; width: 70%; height: 40%; margin-left: 320px;">
+    <thead>
+      <tr>
+        <th class="th-sm">FullName
+  
+        </th>
+        <th class="th-sm">Age
+  
+        </th>
+        <th class="th-sm">Gender
+  
+        </th>
+        <th class="th-sm">BloodGroup
+  
+        </th>
+        <th class="th-sm">MobileNumber
+  
+        </th>
+        <th class="th-sm">AlternativeMobileNumber
+  
+        </th>
+        <th class="th-sm">Email 
+  
+        </th>
+        <th class="th-sm">FullAddress
+  
+        </th>
+        <th class="th-sm">Country
+  
+        </th>
+        <th class="th-sm">State
+  
+        </th>
+        <th class="th-sm">District
+  
+        </th>
+        <th class="th-sm">Area
+  
+        </th>
+        <th class="th-sm">Pincode
+  
+        </th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of prods;">
+        <td>{{p.user_fullname}}</td>
+        <td>{{p.user_age}}</td>
+        <td>{{p.gender_name}}</td>
+        <td>{{p.bloodgroup_name}}</td>
+        <td>{{p.user_mobile1}}</td>
+        <td>{{p.user_mobile2}}</td>
+        <td>{{p.user_emailid}}</td>
+        <td>{{p.user_fulladdress}}</td>
+        <td>{{p.country_name}}</td>
+        <td>{{p.state_name}}</td>
+        <td>{{p.district_name}}</td>
+        <td>{{p.area_name}}</td>
+        <td>{{p.user_pincode}}</td>
+         <!-- <td ><button (click)="delete()">Inactive</button></td> -->
+      </tr>
+    </tbody>
+  </table>

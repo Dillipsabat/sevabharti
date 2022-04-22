@@ -1,0 +1,3 @@
+export class Benfsignup1 {
+    constructor(public benf_fullname:string="",public benf_age:number=null,public gender_name:string="",public blood_type_name:string="",public bloodgroup_name:string="",public benf_units_required:number=null,public benf_accepted_bloodgroup:string="",public benf_deadline:string="",public benf_mobile1:number=null,public benf_mobile2:number=null,public benf_hospital_name:string="",public benf_hospital_address:string="",public country_name:string="",public state_name:string="",public district_name:string="",public area_name:string="",public benf_pincode:number=null)   {}
+}

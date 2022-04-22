@@ -1,0 +1,17 @@
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card py-4 px-4">
+        <div class="text-center"> <img src="../../../assets/mobile-icon.png" width="60"> </div>
+        <div class="text-center mb-3"> <span class="info-text">Please enter your mobile number to Login</span> </div>
+        <div class="position-relative mb-3 form-input"> <input (keypress)="keyPress($event)" 
+            minlength=10 maxlength=10 #model3="ngModel" class="form-control" [(ngModel)]="mrec.mobile_no" required minlength="10" maxlength="10"> 
+            <div *ngIf="model3.hasError('minlength')" style="color: red">Enter 10 Digit Mobile Number</div>
+            <div *ngIf="model3.hasError('required')" style="color: red">Enter Mobile Number</div>
+        </div>
+        <button class="btn btn-danger" (click)="change1(mrec)">submit</button>
+    </div>
+</div>
+
+<!-- <div class="class1">
+    <input type="number" placeholder="Enter your mobile number" [(ngModel)]="mrec.mobile_no"><br>
+    <button (click)="change1(mrec)">Submit</button>
+</div> -->

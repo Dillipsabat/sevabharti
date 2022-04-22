@@ -1,0 +1,79 @@
+<table id="dtBasicExample" class="table float-left table-danger table-hover table-striped table-bordered table-sm" cellspacing="0"  style="display: inline-block; overflow:scroll; margin-top: -600px; width: 70%; height: 40%; margin-left: 320px;">
+    <thead>
+      <tr>
+        <th class="th-sm">Name
+  
+        </th>
+        <th class="th-sm">Age
+  
+        </th>
+        <th class="th-sm">Gender
+  
+        </th>
+        <th class="th-sm">BloodRequestType
+  
+        </th>
+        <th class="th-sm">BloodGroup
+  
+        </th>
+        <th class="th-sm">UnitsRequired
+  
+        </th>
+        <th class="th-sm">AcceptedBloodGroup 
+  
+        </th>
+        <th class="th-sm">DeadLine
+  
+        </th>
+        <th class="th-sm">Mobileno
+  
+        </th>
+        <th class="th-sm">AlternativeMobileno
+  
+        </th>
+        <th class="th-sm">HospitalName
+  
+        </th>
+        <th class="th-sm">HospitalLocation
+  
+        </th>
+        <th class="th-sm">Country
+  
+        </th>
+        <th class="th-sm">State
+  
+        </th>
+        <th class="th-sm">District
+  
+        </th>
+        <th class="th-sm">Area
+  
+        </th>
+        <th class="th-sm">Pincode
+  
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of prods1">
+        <td>{{p.benf_fullname}}</td>
+        <td>{{p.benf_age}}</td>
+        <td>{{p.gender_name}}</td>
+        <td>{{p.blood_type_name}}</td>
+        <td>{{p.bloodgroup_name}}</td>
+        <td>{{p.benf_units_required}}</td>
+        <td>{{p.benf_accepted_bloodgroup}}</td>
+        <td>{{p.benf_deadline}}</td>
+        <td>{{p.benf_mobile1}}</td>
+        <td>{{p.benf_mobile2}}</td>
+        <td>{{p.benf_hospital_name}}</td>
+        <td>{{p.benf_hospital_address}}</td>
+        <td>{{p.country_name}}</td>
+        <td>{{p.state_name}}</td>
+        <td>{{p.district_name}}</td>
+        <td>{{p.area_name}}</td>
+        <td>{{p.benf_pincode}}</td>
+        
+    </tr>
+    </tbody>
+  </table>
